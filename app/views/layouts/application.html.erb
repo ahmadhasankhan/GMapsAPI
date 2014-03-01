@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Placesearch</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <title>Placesearch</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=AIzaSyD9r1peompoZwg8PCZYZnL7B3V58X466fI" type="text/javascript"></script>
 </head>
-<body>
+<body onload="initialize()" onunload="GUnload()" style="font-family: Arial;border: 0 none;">
 
 <%= yield %>
 
