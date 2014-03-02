@@ -24,7 +24,6 @@ function initialize() {
         geocoder = new GClientGeocoder();
     }
 }
-
 function showAddress(address) {
     if (geocoder) {
         geocoder.getLatLng(

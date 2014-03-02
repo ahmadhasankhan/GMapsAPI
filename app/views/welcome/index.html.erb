@@ -1,14 +1,7 @@
-<!--
-You are free to copy and use this sample in accordance with the terms of the
-Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
--->
-
-<form action="#" onsubmit="showAddress(this.address.value); return false">
+<%= form_tag :action=>'myquery' do %>
     <p>
-        <input type="text" size="60" name="address" value="The Red fort,Delhi,IN"/>
-        <input type="submit" value="Go!"/>
+        <%= text_field_tag :address, params[:address], :value=>"APYL,Noida,IN", :size=>"60" %>
+        <%= submit_tag "Go!" %>
     </p>
-    <div id="map_canvas" style="width: 500px; height: 300px"></div>
-</form>
-​
-
+<% end %>
+<div id="map_canvas" style="width: 500px; height: 300px"></div>

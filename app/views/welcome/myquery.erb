@@ -1,0 +1,34 @@
+<%= form_tag :action => 'myquery' do %>
+    <p>
+        <%= text_field_tag :address, params[:address], :size => "60" %>
+        <%= submit_tag "Go!" %>
+    </p>
+<% end %>
+​
+<div id="map_canvas" style="width: 500px; height: 300px"></div>
+<div style="margin-bottom: 50px"></div>
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>name</th>
+        <th>icon</th>
+        <th>Now Open</th>
+        <th>photos</th>
+        <th>types</th>
+        <th>Address</th>
+    </tr>
+    <% counter=1
+       @parsed_results["results"].each do |result| %>
+        <tr>
+            <td><%= counter %></td>
+            <td><%= result['name'] %></td>
+            <td><%= image_path(result['icon']) %> </td>
+            <td><%= result['opening_hours'] %></td>
+            <td><%#= result['photos'] %></td>
+            <td><%= result['types'] %></td>
+            <td><%= result['formatted_address'] %></td>
+        </tr>
+        <% counter = counter+1 %>
+    <% end %>
+</table>
+
