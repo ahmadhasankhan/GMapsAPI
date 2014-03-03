@@ -6,13 +6,13 @@ class WelcomeController < ApplicationController
 
   def index
     address= params[:address]
-    #if address.nil?
-    #  address = "Delhi,India"
-    #end
+    if address.nil?
+      address = "Delhi,India"
+    end
     #@json_response=File.read('D:\projects\ruby\forheroku\placesearch\app\controllers\result.json')
     #@json_response=File.read('D:\projects\ruby\forheroku\placesearch\app\controllers\result2.json')
 
-    url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{address}&sensor=true&key=AIzaSyD9r1peompoZwg8PCZYZnL7B3V58X466fI".force_encoding('ASCII-8BIT')
+    url="https://maps.googleapis.com/maps/api/place/textsearch/json?query=#{address}&sensor=true&key=AIzaSyA5Ep5K4uGXPSY6mg3UqE8Q-t4Igo-F7zk".force_encoding('ASCII-8BIT')
     url = url.force_encoding('ASCII-8BIT')
     url= URI::encode(url)
     contents = open(url)
