@@ -1,7 +1,1 @@
-<%= form_tag :action=>'myquery' do %>
-    <p>
-        <%= text_field_tag :address, params[:address], :value=>"APYL,Noida,IN", :size=>"60" %>
-        <%= submit_tag "Go!" %>
-    </p>
-<% end %>
-<div id="map_canvas" style="width: 500px; height: 300px"></div>
+<%= render 'index'  %>

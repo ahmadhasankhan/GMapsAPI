@@ -16,3 +16,20 @@ body {
  *= require_self
  *= require_tree .
  */
+.result_table {
+    border: 1px solid #18171d;
+    margin-top: 20px;
+}
+
+.result_table th {
+    border-bottom: 1px solid #733b3c;
+    text-align: left;
+    color: #ffffff;
+    height: 35px;
+    background-color: #194d86;
+
+}
+
+.notice_container {
+    color: red;
+}

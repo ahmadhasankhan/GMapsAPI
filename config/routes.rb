@@ -29,8 +29,7 @@ Placesearch::Application.routes.draw do
 
      resources :welcome do
        collection do
-         get 'myquery'
-         post 'myquery'
+
        end
 
      end

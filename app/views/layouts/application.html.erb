@@ -6,10 +6,21 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=AIzaSyD9r1peompoZwg8PCZYZnL7B3V58X466fI" type="text/javascript"></script>
+    <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
 </head>
+
 <body onload="initialize()" onunload="GUnload()" style="font-family: Arial;border: 0 none;">
 <h1>This Is Just For Testing Perpuse</h1>
+
+<%= form_tag({:remote => true}, {:onSubmit => 'gotToAddress(this.address.value);return false'}) do %>
+    <p>
+        <%= text_field_tag :address, params[:address], :size => "60", :required => true %>
+        <%= submit_tag "Awesome!" %>
+    </p>
+
+    <div id="map_canvas" style="width: 500px; height: 300px"></div>
+<% end %>
+
 <%= yield %>
 <h2>A H KHAN</h2>
 

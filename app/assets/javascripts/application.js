@@ -14,15 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
 var map = null;
 var geocoder = null;
 
 function initialize() {
     if (GBrowserIsCompatible()) {
         map = new GMap2(document.getElementById("map_canvas"));
-        map.setCenter(new GLatLng(28.655812600000000000, 77.241952200000010000), 13);
+        map.setCenter(new GLatLng(37.4419, -122.1419), 13);
         geocoder = new GClientGeocoder();
     }
+}
+function gotToAddress(address) {
+    showAddress(address);
+    $.ajax({
+        remote: true,
+        url: "/welcome",
+        data: { address: address }
+    });
 }
 function showAddress(address) {
     if (geocoder) {
